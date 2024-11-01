@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A5E624FB-EDFF-4A06-B158-0C61298F1553}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poupa.AI.API", "src\Poupa.AI.API\Poupa.AI.API.csproj", "{5F831325-7DF7-441C-BB64-CB725B8F4012}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poupa.AI.Application", "src\Poupa.AI.Application\Poupa.AI.Application.csproj", "{CC961B97-10B1-439C-A9A8-B549F32303AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poupa.AI.Domain", "src\Poupa.AI.Domain\Poupa.AI.Domain.csproj", "{5B253932-79E2-4AD2-9D54-2D61762953FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poupa.AI.Infra", "src\Poupa.AI.Infra\Poupa.AI.Infra.csproj", "{F20CC25A-5C29-4946-B68E-D70A7B7030D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poupa.AI.IoC", "src\Poupa.AI.IoC\Poupa.AI.IoC.csproj", "{ABA1792C-FA87-4AC7-9F40-C3474ED97760}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{9F9E0966-DE46-4E60-A35B-323D68A9BD02}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F831325-7DF7-441C-BB64-CB725B8F4012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F831325-7DF7-441C-BB64-CB725B8F4012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F831325-7DF7-441C-BB64-CB725B8F4012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F831325-7DF7-441C-BB64-CB725B8F4012}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC961B97-10B1-439C-A9A8-B549F32303AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC961B97-10B1-439C-A9A8-B549F32303AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC961B97-10B1-439C-A9A8-B549F32303AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC961B97-10B1-439C-A9A8-B549F32303AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B253932-79E2-4AD2-9D54-2D61762953FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B253932-79E2-4AD2-9D54-2D61762953FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B253932-79E2-4AD2-9D54-2D61762953FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B253932-79E2-4AD2-9D54-2D61762953FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F20CC25A-5C29-4946-B68E-D70A7B7030D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F20CC25A-5C29-4946-B68E-D70A7B7030D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F20CC25A-5C29-4946-B68E-D70A7B7030D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F20CC25A-5C29-4946-B68E-D70A7B7030D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABA1792C-FA87-4AC7-9F40-C3474ED97760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABA1792C-FA87-4AC7-9F40-C3474ED97760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABA1792C-FA87-4AC7-9F40-C3474ED97760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABA1792C-FA87-4AC7-9F40-C3474ED97760}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F9E0966-DE46-4E60-A35B-323D68A9BD02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F9E0966-DE46-4E60-A35B-323D68A9BD02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F9E0966-DE46-4E60-A35B-323D68A9BD02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F9E0966-DE46-4E60-A35B-323D68A9BD02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5F831325-7DF7-441C-BB64-CB725B8F4012} = {A5E624FB-EDFF-4A06-B158-0C61298F1553}
+		{CC961B97-10B1-439C-A9A8-B549F32303AD} = {A5E624FB-EDFF-4A06-B158-0C61298F1553}
+		{5B253932-79E2-4AD2-9D54-2D61762953FD} = {A5E624FB-EDFF-4A06-B158-0C61298F1553}
+		{F20CC25A-5C29-4946-B68E-D70A7B7030D5} = {A5E624FB-EDFF-4A06-B158-0C61298F1553}
+		{ABA1792C-FA87-4AC7-9F40-C3474ED97760} = {A5E624FB-EDFF-4A06-B158-0C61298F1553}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0CFA16DA-F75A-4370-8087-DC7D72D6D95C}
+	EndGlobalSection
+EndGlobal

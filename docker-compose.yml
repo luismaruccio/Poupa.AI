@@ -1,0 +1,6 @@
+services:
+  poupa.ai.api:
+    image: ${DOCKER_REGISTRY-}poupaaiapi
+    build:
+      context: .
+      dockerfile: src/Poupa.AI.API/Dockerfile
