@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Poupa.AI.Common\Poupa.AI.Common.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using Poupa.AI.Infra.Data;
 using Poupa.AI.IoC.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,4 +23,13 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-app.Run();
+ApplyMigrations(app);
+
+await app.RunAsync();
+
+static void ApplyMigrations(WebApplication app)
+{
+    using var scope = app.Services.CreateScope();
+    var dbContext = scope.ServiceProvider.GetRequiredService<PoupaAIDbContext>();
+    dbContext.Database.Migrate();
+}

@@ -10,4 +10,11 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Poupa.AI.Application\Poupa.AI.Application.csproj" />
+    <ProjectReference Include="..\Poupa.AI.Common\Poupa.AI.Common.csproj" />
+    <ProjectReference Include="..\Poupa.AI.Domain\Poupa.AI.Domain.csproj" />
+    <ProjectReference Include="..\Poupa.AI.Infra\Poupa.AI.Infra.csproj" />
+  </ItemGroup>
+
 </Project>

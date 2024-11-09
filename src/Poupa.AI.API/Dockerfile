@@ -13,6 +13,11 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["src/Poupa.AI.API/Poupa.AI.API.csproj", "src/Poupa.AI.API/"]
+COPY ["src/Poupa.AI.Infra/Poupa.AI.Infra.csproj", "src/Poupa.AI.Infra/"]
+COPY ["src/Poupa.AI.Domain/Poupa.AI.Domain.csproj", "src/Poupa.AI.Domain/"]
+COPY ["src/Poupa.AI.Common/Poupa.AI.Common.csproj", "src/Poupa.AI.Common/"]
+COPY ["src/Poupa.AI.IoC/Poupa.AI.IoC.csproj", "src/Poupa.AI.IoC/"]
+COPY ["src/Poupa.AI.Application/Poupa.AI.Application.csproj", "src/Poupa.AI.Application/"]
 RUN dotnet restore "./src/Poupa.AI.API/Poupa.AI.API.csproj"
 COPY . .
 WORKDIR "/src/src/Poupa.AI.API"
