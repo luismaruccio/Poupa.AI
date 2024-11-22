@@ -27,7 +27,7 @@ namespace Poupa.AI.API.Tests.Controllers
         public async Task AddUser_WhenTheUserWasCreatedSuccessfully_ShouldReturnOk()
         {
             _userServiceMock.Setup(x => x.CreateUserAsync(It.IsAny<CreateUserRequest>())).ReturnsAsync(
-                Either<FailureResponse, CreateUserResponse>.FromSuccess(
+                Either<MessageResponse, CreateUserResponse>.FromSuccess(
                     new CreateUserResponse(
                         id: 1, 
                         name: "Test", 
@@ -51,9 +51,9 @@ namespace Poupa.AI.API.Tests.Controllers
         public async Task AddUser_WhenThereWasFailureToCreateTheUser_ShouldReturnBadRequest()
         {
             _userServiceMock.Setup(x => x.CreateUserAsync(It.IsAny<CreateUserRequest>())).ReturnsAsync(
-                Either<FailureResponse, CreateUserResponse>.FromError(
-                    new FailureResponse(
-                        error: "Generic Error"
+                Either<MessageResponse, CreateUserResponse>.FromError(
+                    new MessageResponse(
+                        message: "Generic Error"
                     )
                 )
             );

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Poupa.AI.Infra.Data;
@@ -11,9 +12,11 @@ using Poupa.AI.Infra.Data;
 namespace Poupa.AI.Infra.Migrations
 {
     [DbContext(typeof(PoupaAIDbContext))]
-    partial class PoupaAIDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241109150226_CreateCategoriesTable")]
+    partial class CreateCategoriesTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

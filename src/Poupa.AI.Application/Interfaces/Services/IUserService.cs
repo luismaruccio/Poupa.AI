@@ -6,6 +6,6 @@ namespace Poupa.AI.Application.Interfaces.Services
 {
     public interface IUserService
     {
-        public Task<Either<FailureResponse, CreateUserResponse>> CreateUserAsync(CreateUserRequest request);
+        public Task<Either<MessageResponse, CreateUserResponse>> CreateUserAsync(CreateUserRequest request);
     }
 }

@@ -13,28 +13,28 @@ namespace Poupa.AI.Application.Services
 {
     public class UserService(
         IUserRepository userRepository,
-        IValidator<CreateUserRequest> createUserRequest,
+        IValidator<CreateUserRequest> createUserRequestValidator,
         IHashService hashService,
         ILogger<UserService> logger) : IUserService
     {
         private readonly IUserRepository _userRepository = userRepository;
-        private readonly IValidator<CreateUserRequest> _createUserRequest = createUserRequest;
+        private readonly IValidator<CreateUserRequest> _createUserRequestValidate = createUserRequestValidator;
         private readonly IHashService _hashService = hashService;
         private readonly ILogger<UserService> _logger = logger;
         
-        public async Task<Either<FailureResponse, CreateUserResponse>> CreateUserAsync(CreateUserRequest request)
+        public async Task<Either<MessageResponse, CreateUserResponse>> CreateUserAsync(CreateUserRequest request)
         {
-            _logger.LogInformation("CreateUser - Request Received {request}", request);
+            _logger.LogInformation("CreateUserAsync - Request Received {request}", request);
 
-            var validationResult = _createUserRequest.Validate(request);
+            var validationResult = _createUserRequestValidate.Validate(request);
 
             if (validationResult.Errors.Count > 0)
             {
                 var error = validationResult.Errors.FirstOrDefault()!.ToString();
-                _logger.LogError("CreateUser - Error on validate {error}", error);
+                _logger.LogError("CreateUserAsync - Error on validate {error}", error);
 
-                return Either<FailureResponse, CreateUserResponse>.FromError(
-                    new FailureResponse(
+                return Either<MessageResponse, CreateUserResponse>.FromError(
+                    new MessageResponse(
                         ServicesMessages.AnErrorOccurred.WithParameters(
                             [
                                 ServicesMessages.CreateOperation, 
@@ -50,10 +50,10 @@ namespace Poupa.AI.Application.Services
 
             if (emailAlreadyInUse)
             {
-                _logger.LogError("CreateUser - Email already in use: {email}", request.Email);
+                _logger.LogError("CreateUserAsync - Email already in use: {email}", request.Email);
 
-                return Either<FailureResponse, CreateUserResponse>.FromError(
-                    new FailureResponse(
+                return Either<MessageResponse, CreateUserResponse>.FromError(
+                    new MessageResponse(
                         ServicesMessages.AnErrorOccurred.WithParameters(
                             [
                                 ServicesMessages.CreateOperation,
@@ -73,12 +73,12 @@ namespace Poupa.AI.Application.Services
             if (createResult.IsSuccess)
             {
                 user = createResult.Success;
-                _logger.LogInformation("CreateUser - User created sucessfully. Id {id}", user!.Id);
-                return Either<FailureResponse, CreateUserResponse>.FromSuccess(CreateUserResponse.FromUser(user));
+                _logger.LogInformation("CreateUserAsync - User created sucessfully. Id {id}", user!.Id);
+                return Either<MessageResponse, CreateUserResponse>.FromSuccess(CreateUserResponse.FromUser(user));
             }
 
-            return Either<FailureResponse, CreateUserResponse>.FromError(
-                new FailureResponse(
+            return Either<MessageResponse, CreateUserResponse>.FromError(
+                new MessageResponse(
                     createResult.Error!
                 )   
             );
